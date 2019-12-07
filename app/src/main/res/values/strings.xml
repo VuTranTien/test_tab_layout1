@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">test_tab_layout1</string>
+    <string name="tab_congviec">Công việc</string>
+    <string name="tab_taocv">Tạo CV</string>
+    <string name="tab_hoso">Hồ sơ</string>
+    <string name="tab_baidang">Bài đăng</string>
+    <string name="tab_congty">Công ty</string>
+    <string name="tab_inform">Tài khoản</string>
+</resources>
