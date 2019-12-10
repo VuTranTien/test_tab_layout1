@@ -25,7 +25,7 @@ public class recruiterActivity extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tab1);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
-        Toast.makeText(recruiterActivity.this,"HHHHHHHHHHHHHH",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(recruiterActivity.this,"HHHHHHHHHHHHHH",Toast.LENGTH_SHORT).show();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

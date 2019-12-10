@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_margin="20dp"
+    android:padding="8dp"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/img_static_logo"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/txt_item_tencongviec"
+            android:layout_marginLeft="10dp"
+            android:textSize="16sp"
+            android:text="Tên công việc"
+            android:layout_toRightOf="@id/img_static_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/txt_item_tencongty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/txt_item_tencongviec"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="-38dp"
+            android:layout_toRightOf="@id/img_static_logo"
+            android:text="Tên công ty"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txt_item_static_diadiem"
+            android:text="Địa điểm:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/txt_item_diadiem"
+            android:layout_toRightOf="@+id/txt_item_static_diadiem"
+            android:text="Hà Nội"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txt_item_static_luong"
+            android:text="Mức lương:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_item_luong"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txt_item_static_luong"
+            android:text="2000$"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/txt_item_static_hantuyen"
+            android:text="Hạn tuyển dụng:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_item_hantuyen"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/txt_item_static_hantuyen"
+            android:text="1/2/2020"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

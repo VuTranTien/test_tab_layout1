@@ -20,7 +20,7 @@ public class dangnhapActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dangnhap);
 
         anhxa();
-        edtUser.setText("nguoitimviec");
+        edtUser.setText("nhatuyendung");
         edtPass.setText("123456");
         btndangnhap.setOnClickListener(new View.OnClickListener() {
             @Override

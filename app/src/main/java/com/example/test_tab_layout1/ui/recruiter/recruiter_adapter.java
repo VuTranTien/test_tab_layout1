@@ -21,7 +21,7 @@ import com.example.test_tab_layout1.ui.jobseeker.PageViewHoSo;
 public class recruiter_adapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_baidang, R.string.tab_congty,R.string.tab_inform};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_baidang,R.string.tab_newjob, R.string.tab_congty,R.string.tab_inform};
     private final Context mContext;
 
     public recruiter_adapter(Context context, FragmentManager fm) {
@@ -39,10 +39,13 @@ public class recruiter_adapter extends FragmentPagerAdapter {
             return baidang;
         }
         else if (position == 1){
-            return new PageViewCongTy();
+            return new PageViewNewJob();
         }
-        else
+        else if(position == 2)
+            return new PageViewCongTy();
+        else {
             return new PageViewInform();
+        }
     }
 
     @Nullable
@@ -55,6 +58,6 @@ public class recruiter_adapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         // Show 2 total pages.
-        return 3;
+        return 4;
     }
 }

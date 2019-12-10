@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".update_recInfoActivity"></activity>
+        <activity android:name=".update_baidangActivity"></activity>
+        <activity android:name=".thongtincongviecActivity" />
+        <activity android:name=".update_recInfoActivity" />
         <activity android:name=".update_congtyActivity" />
         <activity android:name=".dangkiActivity" />
         <activity android:name=".dangnhapActivity">

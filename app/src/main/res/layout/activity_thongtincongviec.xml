@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:textSize="16sp"
+                android:textColor="#24975e"
+                android:layout_marginLeft="8dp"
+                android:id="@+id/txt_tencongviec"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@id/img_logo"
+                android:text="Software Engineer (Java, .NET)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/txt_thongtincongty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="60dp"
+                android:layout_toRightOf="@id/img_logo"
+                android:text="FPT Software" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Thời hạn tuyển"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_thoihantuyen"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:text="20/2/2020"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="20dp"
+                android:text="Lượt xem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_luotxem"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:text="100"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="#ff0000"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Mức lương:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_luong"
+                android:layout_marginLeft="5dp"
+                android:text="2000$"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Hình thức làm việc:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:text="Fulltime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Giới tính:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_gioitinh"
+                android:layout_marginLeft="5dp"
+                android:text="Không yêu cầu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Chức vụ:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_chucvu"
+                android:layout_marginLeft="5dp"
+                android:text="Nhân viên"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Kinh nghiệm yêu cầu:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_kinhnghiem"
+                android:layout_marginLeft="5dp"
+                android:text="2-3 năm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:text="Địa điểm làm việc:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_diadiemlamviec"
+                android:layout_marginLeft="5dp"
+                android:text="Tp HCM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+        <TextView
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Mô tả công việc:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_motacongviec"
+            android:text="Tham gia xây dựng và phát triển dự án với khách hàng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Yêu cầu công việc:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_yeucaucongviec"
+            android:text="- Kinh nghiệm làm việc trên 1,5 năm \n- Lập trình dựa trên một số các Framework Struts, Spring/Hibernate \n- Có kiến thức tốt về JQuery, Oracle, SQL Server\n- Có khả năng xử lý tình huống tốt, cẩn thận, trách nhiệm cao trong công việc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/txt_quyenloi"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:text="Quyền lợi:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:text="- Mức lương cạnh tranh (600$-1500$), tương xứng với vị trí và đóng góp của bạn
+Thưởng nóng 2 tháng lương nếu tham gia vào dự án.\n
+- Cơ hội onsite và làm việc với các khách hàng lớn trên thế giới, công nghệ tiên tiến, phát triển bản thân…\n
+- Môi trường làm việc cởi mở, dân chủ, đặc trưng văn hóa FPT \n
+- Chế độ chăm sóc sức khỏe đặc biệt dành cho nhân viên và người thân (FPTcare) \n
+- Và rất nhiều quyền lợi hấp dẫn khác …"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+</ScrollView>
+
