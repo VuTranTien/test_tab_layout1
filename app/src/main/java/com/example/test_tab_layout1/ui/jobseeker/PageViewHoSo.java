@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.test_tab_layout1.App;
 import com.example.test_tab_layout1.R;
 import com.example.test_tab_layout1.ViewHocVanList.HocVanAdapter;
 import com.example.test_tab_layout1.ViewHocVanList.HocVanInfo;
@@ -44,7 +45,7 @@ public class PageViewHoSo extends Fragment {
 
         TabLayout tl = root.findViewById(R.id.tabs);
 //        tl.getTabAt(2);
-        hocVanAdapter = new HocVanAdapter(hocVanInfoList);
+        hocVanAdapter = new HocVanAdapter(App.hocVans);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

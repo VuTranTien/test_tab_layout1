@@ -11,7 +11,7 @@ public class CompanyInfo {
 
     }
 
-    public CompanyInfo(String macongty, String email, String std, String website, String mota, String diachi, String ten) {
+    public CompanyInfo(String macongty, String ten, String std, String website, String diachi, String email, String mota) {
         this.macongty = macongty;
         this.email = email;
         this.std = std;

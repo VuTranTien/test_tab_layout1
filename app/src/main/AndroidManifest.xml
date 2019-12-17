@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.test_tab_layout1">
-
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".add_congtyActivity"></activity>
-        <activity android:name=".modify_congtyActivity" />
-        <activity android:name=".modify_hocvanActivity" />
-        <activity android:name=".add_hocvanActivity" />
-        <activity android:name=".add_new_accountActivity" />
-        <activity android:name=".update_accountActivity" />
-        <activity android:name=".update_baidangActivity" />
-        <activity android:name=".thongtincongviecActivity" />
-        <activity android:name=".update_recInfoActivity" />
-        <activity android:name=".update_congtyActivity" />
-        <activity android:name=".dangkiActivity" />
-        <activity android:name=".dangnhapActivity">
+        android:theme="@style/AppTheme"
+        android:windowSoftInputMode="adjustNothing">
+        <activity android:name=".add_congtyActivity"
+            android:windowSoftInputMode="adjustNothing"></activity>
+        <activity android:name=".modify_congtyActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".modify_hocvanActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".add_hocvanActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".add_new_accountActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".update_accountActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".update_baidangActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".thongtincongviecActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".update_recInfoActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".update_congtyActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".dangkiActivity" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".dangnhapActivity" android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,11 +32,11 @@
         <activity
             android:name=".recruiterActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ThongtincongtyActivity" />
+            android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustNothing"/>
+        <activity android:name=".ThongtincongtyActivity" android:windowSoftInputMode="adjustNothing"/>
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustNothing"/>
     </application>
 
 </manifest>

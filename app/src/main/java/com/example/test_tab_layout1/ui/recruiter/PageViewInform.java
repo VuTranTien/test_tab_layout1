@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.test_tab_layout1.App;
 import com.example.test_tab_layout1.R;
 import com.example.test_tab_layout1.ViewAccountList.AccountAdapter;
 import com.example.test_tab_layout1.ViewAccountList.AccountInfo;
@@ -43,7 +44,7 @@ public class PageViewInform extends Fragment {
 
         recyclerView = root.findViewById(R.id.RC_congviec);
         TabLayout tl = root.findViewById(R.id.tabs);
-        accountAdapter = new AccountAdapter(accountInfoList);
+        accountAdapter = new AccountAdapter(App.acounts);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

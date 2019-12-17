@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.test_tab_layout1.App;
 import com.example.test_tab_layout1.R;
 import com.example.test_tab_layout1.ViewCompanyList.CompanyAdapter;
 import com.example.test_tab_layout1.ViewCompanyList.CompanyInfo;
@@ -54,7 +55,7 @@ public class PageViewCongTy extends Fragment {
 //        });
         recyclerView = root.findViewById(R.id.RC_congviec);
         TabLayout tl = root.findViewById(R.id.tabs);
-        CompanyAdapter = new CompanyAdapter(companyInfoList);
+        CompanyAdapter = new CompanyAdapter(App.companys);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
