@@ -56,12 +56,11 @@ public class RecJobAdapter extends RecyclerView.Adapter<RecJobAdapter.MyViewHold
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView tencongty, tencongviec, logo,diadiem,luong,hantuyen;
+        TextView tencongty, tencongviec,diadiem,luong,hantuyen;
         MyViewHolder(final View view) {
             super(view);
             tencongty = view.findViewById(R.id.txt_item_tencongty);
             tencongviec = view.findViewById(R.id.txt_item_tencongviec);
-//            logo = view.findViewById(R.id.img_static_logo);
             hantuyen = view.findViewById(R.id.txt_item_hantuyen);
             diadiem = view.findViewById(R.id.txt_item_diadiem);
             luong = view.findViewById(R.id.txt_item_luong);
@@ -77,6 +76,7 @@ public class RecJobAdapter extends RecyclerView.Adapter<RecJobAdapter.MyViewHold
                         public void onClick(DialogInterface dialog, int which) {
                            if(items[which].equals("Delete")) {
                                //Todo: delete cong viec
+                               
                                Toast.makeText(tencongty.getContext(),"Đã xóa",Toast.LENGTH_SHORT).show();
                            }
                            else if(items[which].equals("Modify")){
