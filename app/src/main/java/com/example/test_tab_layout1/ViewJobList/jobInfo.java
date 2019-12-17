@@ -1,5 +1,10 @@
 package com.example.test_tab_layout1.ViewJobList;
 
+import com.example.test_tab_layout1.ConnectToSQLServer;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  * Project name: test_tab_layout1
  * Created by Tran Tien Vu
@@ -18,6 +23,14 @@ public class jobInfo {
         this.diadiem = diadiem;
         this.hantuyen = hantuyen;
         this.tencongty = tencongty;
+        try {
+            Statement state = ConnectToSQLServer.getInstance().createStatement();
+            ResultSet rsTenCty = state.executeQuery("select TenCty from Nguoi_dung nd join Cong_ty ct on nd.MaSoCty = ct.MaSoCty where nd.Username = '" + this.tencongty + "'");
+            rsTenCty.next();
+            this.tencongty = rsTenCty.getString(1);
+        }catch (Exception e){
+
+        }
     }
 
     public String getMabaidang() {

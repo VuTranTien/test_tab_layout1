@@ -142,7 +142,7 @@ public class dangnhapActivity extends AppCompatActivity {
                         rs.getString(4),
                         rs.getString(6),
                         rs.getString(9),
-                        rs.getString(1)));
+                        rs.getString(12)));
             }
         }catch(Exception e){
             edtUser.setText(e.getMessage());
