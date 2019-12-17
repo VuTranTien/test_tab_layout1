@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,7 +34,7 @@ import java.util.List;
 public class PageViewCongTy extends Fragment {
     private CompanyAdapter CompanyAdapter;
     private RecyclerView recyclerView;
-
+    Spinner sp ;
     public PageViewCongTy(){
 
     }
@@ -58,6 +60,13 @@ public class PageViewCongTy extends Fragment {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(CompanyAdapter);
         loaddata();
+        sp = root.findViewById(R.id.sp1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.planets_array, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        sp.setAdapter(adapter);
 
         return root;
     }

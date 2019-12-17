@@ -7,4 +7,14 @@
     <string name="tab_congty">Công ty</string>
     <string name="tab_inform">Tài khoản</string>
     <string name="tab_newjob">Thêm bài đăng</string>
+    <string-array name="planets_array">
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
+    </string-array>
 </resources>
