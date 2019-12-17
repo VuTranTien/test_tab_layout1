@@ -13,16 +13,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center">
             <Spinner
                 android:id="@+id/sp1"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"/>
-            <Button
-                android:id="@+id/btnSapXep"
-                android:text="Sap xep"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"/>
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -30,19 +27,15 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <Spinner
-                android:id="@+id/sp2"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"/>
             <EditText
                 android:maxLines="1"
                 android:id="@+id/edtTimKiem"
-                android:layout_width="200dp"
+                android:layout_width="290dp"
                 android:layout_height="match_parent"
                 android:windowSoftInputMode="adjustResize"/>
             <Button
                 android:id="@+id/btnTimKiem"
-                android:text="Sap xep"
+                android:text="Tiềm kiếm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

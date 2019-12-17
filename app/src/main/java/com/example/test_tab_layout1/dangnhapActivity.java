@@ -45,10 +45,6 @@ public class dangnhapActivity extends AppCompatActivity {
             }
         });
 
-        loadAccount();
-        loadHocVan();
-        loadCongty();
-        loadCongViec();
     }
     void anhxa(){
         edtUser = findViewById(R.id.edtuser);
@@ -74,78 +70,5 @@ public class dangnhapActivity extends AppCompatActivity {
             Toast.makeText(dangnhapActivity.this,"Sai username hoặc password!",Toast.LENGTH_SHORT).show();
         }
     }
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    public void loadAccount(){
-        try {
-            Statement state = ConnectToSQLServer.getInstance().createStatement();
-            ResultSet rs = state.executeQuery("select * from Nguoi_dung");
-            while(rs.next()){
-                App.acounts.add(new AccountInfo(
-                        rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(7),
-                        rs.getString(8),
-                        rs.getString(9)));
-            }
-        }catch(Exception e){
-            edtUser.setText(e.getMessage());
-        }
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    public void loadCongty(){
-        try {
-            Statement state = ConnectToSQLServer.getInstance().createStatement();
-            ResultSet rs = state.executeQuery("select * from Cong_ty");
-            while(rs.next()){
-                App.companys.add(new CompanyInfo(
-                        rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getString(6),
-                        rs.getString(7)));
-            }
-        }catch(Exception e){
-            edtUser.setText(e.getMessage());
-        }
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    public void loadHocVan(){
-        try {
-            Statement state = ConnectToSQLServer.getInstance().createStatement();
-            ResultSet rs = state.executeQuery("select * from Hoc_van");
-            while(rs.next()){
-                App.hocVans.add(new HocVanInfo(
-                        rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4)));
-            }
-        }catch(Exception e){
-            edtUser.setText(e.getMessage());
-        }
-    }
-    //----------------------------------------------------------------------------------------------------------------------------------------------
-    public void loadCongViec(){
-        try {
-            Statement state = ConnectToSQLServer.getInstance().createStatement();
-            ResultSet rs = state.executeQuery("select * from Cong_viec");
-            while(rs.next()){
-                App.jobs.add(new jobInfo(
-                        rs.getString(1),
-                        rs.getString(2),
-                        rs.getString(4),
-                        rs.getString(6),
-                        rs.getString(9),
-                        rs.getString(12)));
-            }
-        }catch(Exception e){
-            edtUser.setText(e.getMessage());
-        }
-    }
+
 }

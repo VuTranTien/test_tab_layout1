@@ -7,14 +7,30 @@
     <string name="tab_congty">Công ty</string>
     <string name="tab_inform">Tài khoản</string>
     <string name="tab_newjob">Thêm bài đăng</string>
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
+    <string-array name="nguoiDung">
+        <item>Username</item>
+        <item>Tên</item>
+        <item>Số điện thoai</item>
+        <item>Mã công ty</item>
+    </string-array>
+
+    <string-array name="congViec">
+        <item>Công ty</item>
+        <item>Địa điểm</item>
+        <item>Lương lớn hơn</item>
+        <item>Lương nhỏ hơn</item>
+    </string-array>
+
+    <string-array name="congTy">
+        <item>Tên</item>
+        <item>Số điện thoai</item>
+        <item>Địa chỉ</item>
+    </string-array>
+
+    <string-array name="hocVan">
+        <item>Tên trường</item>
+        <item>Chuyên ngành</item>
+        <item>Ngày tốt nghiệp trước</item>
+        <item>Ngày tôt nghiệp sau</item>
     </string-array>
 </resources>

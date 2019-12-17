@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.test_tab_layout1.App;
+import com.example.test_tab_layout1.ConnectToSQLServer;
 import com.example.test_tab_layout1.R;
 import com.example.test_tab_layout1.ViewCompanyList.CompanyAdapter;
 import com.example.test_tab_layout1.ViewCompanyList.CompanyInfo;
@@ -24,6 +25,8 @@ import com.example.test_tab_layout1.ViewJobList.RecJobAdapter;
 import com.example.test_tab_layout1.update_congtyActivity;
 import com.google.android.material.tabs.TabLayout;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,7 +58,7 @@ public class PageViewCongTy extends Fragment {
 //        });
         recyclerView = root.findViewById(R.id.RC_congviec);
         TabLayout tl = root.findViewById(R.id.tabs);
-        CompanyAdapter = new CompanyAdapter(App.companys);
+        CompanyAdapter = new CompanyAdapter(companyInfoList);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -63,7 +66,7 @@ public class PageViewCongTy extends Fragment {
         loaddata();
         sp = root.findViewById(R.id.sp1);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
-                R.array.planets_array, android.R.layout.simple_spinner_item);
+                R.array.nguoiDung, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
@@ -72,14 +75,22 @@ public class PageViewCongTy extends Fragment {
         return root;
     }
     private void loaddata(){
-        companyInfoList.add(new CompanyInfo("001","abc@gmail.com","09999999","abc.com","mota...","Tp HCM","ABC"));
-        companyInfoList.add(new CompanyInfo("001","abc@gmail.com","09999999","abc.com","mota...","Tp HCM","ABC"));
-        companyInfoList.add(new CompanyInfo("001","abc@gmail.com","09999999","abc.com","mota...","Tp HCM","ABC"));
-        companyInfoList.add(new CompanyInfo("001","abc@gmail.com","09999999","abc.com","mota...","Tp HCM","ABC"));companyInfoList.add(new CompanyInfo("001","abc@gmail.com","09999999","abc.com","mota...","Tp HCM","ABC"));
-        companyInfoList.add(new CompanyInfo("001","abc@gmail.com","09999999","abc.com","mota...","Tp HCM","ABC"));
-        companyInfoList.add(new CompanyInfo("001","abc@gmail.com","09999999","abc.com","mota...","Tp HCM","ABC"));
-        companyInfoList.add(new CompanyInfo("001","abc@gmail.com","09999999","abc.com","mota...","Tp HCM","ABC"));
-        companyInfoList.add(new CompanyInfo("001","abc@gmail.com","09999999","abc.com","mota...","Tp HCM","ABC"));
+        try {
+            Statement state = ConnectToSQLServer.getInstance().createStatement();
+            ResultSet rs = state.executeQuery("select * from Cong_ty");
+            while(rs.next()){
+                companyInfoList.add(new CompanyInfo(
+                        rs.getString(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7)));
+            }
+        }catch(Exception e){
+
+        }
         CompanyAdapter.notifyDataSetChanged();
 
 
