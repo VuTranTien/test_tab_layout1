@@ -69,6 +69,14 @@ public class PageViewHoSo extends Fragment {
 
         return root;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        hocVanInfoList.clear();
+        loaddata();
+    }
+
     private void loaddata(){
         try {
             Statement state = ConnectToSQLServer.getInstance().createStatement();

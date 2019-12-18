@@ -24,7 +24,7 @@ public class ConnectToSQLServer {
                 StrictMode.setThreadPolicy(policy);
                 Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
 
-                cn = DriverManager.getConnection("jdbc:jtds:sqlserver://192.168.43.220;databaseName=btl2;user=sa;password=tienvu;");
+                cn = DriverManager.getConnection("jdbc:jtds:sqlserver://10.80.251.5;databaseName=BTL2_Database;user=sa;password=dth120699;");
             }catch(Exception e){
                 Log.e(e.getMessage(), "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             }

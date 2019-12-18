@@ -30,6 +30,7 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/insertTen"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -44,6 +45,7 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/insertMaSoCV"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -58,6 +60,7 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/insertChuyenNganh"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -72,12 +75,13 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"/>
             <EditText
+                android:id="@+id/insertNam"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
 
         <Button
-            android:id="@+id/btn_add_hocvan"
+            android:id="@+id/btnInsertHocVan"
             android:textColor="#E91E63"
             android:background="@null"
             android:layout_marginTop="20dp"

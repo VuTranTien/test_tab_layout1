@@ -97,7 +97,7 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.MyViewHo
                             } else if (items[which].equals("Modify")) {
                                 //Todo: update
                                 Intent it = new Intent(tencongty.getContext(), update_accountActivity.class);
-                                it.putExtra("username", _username);
+                                it.putExtra("username", username.getText().toString());
                                 tencongty.getContext().startActivity(it);
 //                               Toast.makeText(tencongty.getContext(),"Đã cập nhật",Toast.LENGTH_SHORT).show();
                             } else if(items[which].equals("Insert")) {

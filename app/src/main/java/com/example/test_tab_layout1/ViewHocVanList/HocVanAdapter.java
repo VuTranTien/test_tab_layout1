@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.test_tab_layout1.ConnectToSQLServer;
 import com.example.test_tab_layout1.R;
 import com.example.test_tab_layout1.ViewAccountList.AccountAdapter;
 import com.example.test_tab_layout1.add_hocvanActivity;
@@ -19,6 +20,7 @@ import com.example.test_tab_layout1.add_new_accountActivity;
 import com.example.test_tab_layout1.modify_hocvanActivity;
 import com.example.test_tab_layout1.update_accountActivity;
 
+import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -79,15 +81,30 @@ public class HocVanAdapter extends RecyclerView.Adapter<HocVanAdapter.MyViewHole
                             if (items[which].equals("Delete")) {
                                 //Todo: delete hoc van
 
+                                try {
+                                    Statement state = ConnectToSQLServer.getInstance().createStatement();
+                                    state.executeQuery("delete from Hoc_van where MaSoCV = '"  +
+                                            masocv.getText().toString() + "'" +
+                                            " and " +
+                                            "TenTruong = '" + tentruong.getText().toString() + "'"
+                                    );
+                                }catch(Exception e){
+
+                                }
+                                hocVanInfoList.remove(getAdapterPosition());
+                                notifyDataSetChanged();
+
                                 Toast.makeText(tentruong.getContext(), "Đã xóa", Toast.LENGTH_SHORT).show();
                             } else if (items[which].equals("Modify")) {
                                 //Todo: update
                                 Intent it = new Intent(tentruong.getContext(), modify_hocvanActivity.class);
                                 //Todo: dung it.putExtra() de gui data can thiet
+                                it.putExtra("masocv", masocv.getText().toString());
+                                it.putExtra("tentruong", tentruong.getText().toString());
                                 tentruong.getContext().startActivity(it);
 //                               Toast.makeText(tencongty.getContext(),"Đã cập nhật",Toast.LENGTH_SHORT).show();
                             } else if(items[which].equals("Insert")) {
-                                Intent it = new Intent(tentruong.getContext(), modify_hocvanActivity.class) ;
+                                Intent it = new Intent(tentruong.getContext(), add_hocvanActivity.class) ;
                                 tentruong.getContext().startActivity(it);
                             }
                             else {

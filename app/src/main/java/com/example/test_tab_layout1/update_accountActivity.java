@@ -29,6 +29,7 @@ public class update_accountActivity extends AppCompatActivity {
         final String username = getIntent().getStringExtra("username");
         Toast.makeText(this, username, Toast.LENGTH_LONG).show();
         map();
+
         try {
             Statement state = ConnectToSQLServer.getInstance().createStatement();
             ResultSet rs = state.executeQuery("select * from Nguoi_dung where Username = '" + username + "'");
@@ -63,15 +64,17 @@ public class update_accountActivity extends AppCompatActivity {
                     return;
                 }
 
-                String maso = (strCty.equals("")) ? "null" : "'" + strCty + "'";
-
-                String at = (strCty.equals("")) ? "1" : "2";
-
                 try {
                     Statement state = ConnectToSQLServer.getInstance().createStatement();
-
+                    state.execute("update Nguoi_dung set " +
+                            "Username = '" + strUser + "'," +
+                            "Email = '" + strEmail + "'," +
+                            "HoTenDem = '" + strHoTen + "'," +
+                            "Ten = '" + strTen + "'," +
+                            "DiaChi = '" + strDiaChi + "'," +
+                            "SDT = '" + strSDT + "' where Username = '" + account.getUsername() + "'");
                 } catch (Exception e) {
-
+                    Toast.makeText(update_accountActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
 
                 onBackPressed();

@@ -72,7 +72,9 @@ public class PageViewInform extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        accountInfoList.clear();
         loaddata();
+
     }
 
     private void loaddata(){
