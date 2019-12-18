@@ -44,12 +44,58 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHoler holder, int position) {
-        CompanyInfo companyInfo = companyInfoList.get(position);
+        final CompanyInfo companyInfo = companyInfoList.get(position);
         holder.txt_item_tencongty.setText(companyInfo.getTen());
         holder.txt_item_diachicongty.setText(companyInfo.getDiachi());
         holder.txt_item_emailcongty.setText(companyInfo.getEmail());
         holder.txt_item_sdtcongty.setText(companyInfo.getStd());
+        final MyViewHoler h = holder;
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Todo: alertDialock
 
+                final CharSequence[] items = {"Insert", "Delete", "Modify", "Cancle"};
+                AlertDialog.Builder builder = new AlertDialog.Builder(h.txt_item_tencongty.getContext());
+                builder.setTitle("Tùy chọn");
+                builder.setItems(items, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (items[which].equals("Delete")) {
+                            //Todo: delete cong ty co macongty
+
+                            try {
+                                Statement state = ConnectToSQLServer.getInstance().createStatement();
+                                state.executeQuery("delete from Cong_ty where MaSoCty = '"  +
+                                        companyInfo.getMacongty() + "'"
+                                );
+                            }catch(Exception e){
+
+                            }
+                            companyInfoList.remove(h.getAdapterPosition());
+                            notifyDataSetChanged();
+
+                            Toast.makeText(h.txt_item_tencongty.getContext(), "Đã xóa", Toast.LENGTH_SHORT).show();
+                        } else if (items[which].equals("Modify")) {
+                            //Todo: update
+                            Intent it = new Intent(h.txt_item_tencongty.getContext(), modify_congtyActivity.class);
+                            it.putExtra("macongty", companyInfo.getMacongty());
+                            h.txt_item_tencongty.getContext().startActivity(it);
+//                               Toast.makeText(tencongty.getContext(),"Đã cập nhật",Toast.LENGTH_SHORT).show();
+                        } else if (items[which].equals("Insert")) {
+                            //Todo: them cong ty moi
+                            Intent it = new Intent(h.txt_item_tencongty.getContext(), add_congtyActivity.class);
+                            h.txt_item_tencongty.getContext().startActivity(it);
+                        } else {
+                            dialog.dismiss();
+                        }
+                    }
+
+                });
+                builder.show();
+
+            }
+        });
 
     }
 
@@ -69,52 +115,7 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.MyViewHo
             txt_item_diachicongty = itemView.findViewById(R.id.txt_item_diachicongty);
             txt_item_emailcongty = itemView.findViewById(R.id.txt_emailcongty);
             txt_item_sdtcongty = itemView.findViewById(R.id.txt_item_sdtcongty);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //Todo: alertDialock
 
-                    final CharSequence[] items = {"Insert", "Delete", "Modify", "Cancle"};
-                    AlertDialog.Builder builder = new AlertDialog.Builder(txt_item_tencongty.getContext());
-                    builder.setTitle("Tùy chọn");
-                    builder.setItems(items, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (items[which].equals("Delete")) {
-                                //Todo: delete cong ty co macongty
-
-                                try {
-                                    Statement state = ConnectToSQLServer.getInstance().createStatement();
-                                    state.executeQuery("delete from Cong_ty where MaSoCty = '"  +
-                                            "ADD" + "'"
-                                    );
-                                }catch(Exception e){
-
-                                }
-                                companyInfoList.remove(getAdapterPosition());
-                                notifyDataSetChanged();
-
-                                Toast.makeText(txt_item_tencongty.getContext(), "Đã xóa", Toast.LENGTH_SHORT).show();
-                            } else if (items[which].equals("Modify")) {
-                                //Todo: update
-                                Intent it = new Intent(txt_item_tencongty.getContext(), modify_congtyActivity.class);
-                                it.putExtra("macongty", macongty);
-                                txt_item_tencongty.getContext().startActivity(it);
-//                               Toast.makeText(tencongty.getContext(),"Đã cập nhật",Toast.LENGTH_SHORT).show();
-                            } else if (items[which].equals("Insert")) {
-                                //Todo: them cong ty moi
-                                Intent it = new Intent(txt_item_tencongty.getContext(), add_congtyActivity.class);
-                                txt_item_tencongty.getContext().startActivity(it);
-                            } else {
-                                dialog.dismiss();
-                            }
-                        }
-
-                    });
-                    builder.show();
-
-                }
-            });
         }
     }
 }
