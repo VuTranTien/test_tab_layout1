@@ -57,7 +57,6 @@ public class PageViewInform extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(accountAdapter);
-        loaddata();
 
         sp = root.findViewById(R.id.sp1);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getActivity(),
@@ -69,10 +68,17 @@ public class PageViewInform extends Fragment {
 
         return root;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loaddata();
+    }
+
     private void loaddata(){
         try {
             Statement state = ConnectToSQLServer.getInstance().createStatement();
-            ResultSet rs = state.executeQuery("select * from Nguoi_dung");
+            ResultSet rs = state.executeQuery("select * from Nguoi_dung order by Username");
             while(rs.next()){
                 accountInfoList.add(new AccountInfo(
                         rs.getString(1),
@@ -90,4 +96,5 @@ public class PageViewInform extends Fragment {
         }
         accountAdapter.notifyDataSetChanged();
     }
+
 }

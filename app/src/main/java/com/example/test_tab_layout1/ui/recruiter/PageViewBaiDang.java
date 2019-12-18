@@ -98,7 +98,5 @@ public class PageViewBaiDang extends Fragment {
 
         }
         jobAdapter.notifyDataSetChanged();
-
-
     }
 }

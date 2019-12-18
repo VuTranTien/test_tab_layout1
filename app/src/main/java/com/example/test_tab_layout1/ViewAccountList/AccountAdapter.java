@@ -12,10 +12,14 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.test_tab_layout1.ConnectToSQLServer;
 import com.example.test_tab_layout1.R;
 import com.example.test_tab_layout1.add_new_accountActivity;
+import com.example.test_tab_layout1.ui.recruiter.PageViewInform;
 import com.example.test_tab_layout1.update_accountActivity;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -60,7 +64,7 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.MyViewHo
     public class MyViewHoler extends RecyclerView.ViewHolder {
         TextView username, hovaten, diachi, sdt, tencongty;
 
-        public MyViewHoler(@NonNull View itemView) {
+        public MyViewHoler(@NonNull final View itemView) {
             super(itemView);
             username = itemView.findViewById(R.id.txt_item_username);
             hovaten = itemView.findViewById(R.id.txt_item_hovaten);
@@ -79,6 +83,16 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.MyViewHo
                             if (items[which].equals("Delete")) {
                                 //Todo: delete cong viec
 
+                                try {
+                                    Statement state = ConnectToSQLServer.getInstance().createStatement();
+                                    state.executeQuery("delete from Nguoi_dung where Username = '"  +
+                                            username.getText().toString() + "'"
+                                    );
+                                }catch(Exception e){
+
+                                }
+                                accountInfoList.remove(getAdapterPosition());
+                                notifyDataSetChanged();
                                 Toast.makeText(tencongty.getContext(), "Đã xóa", Toast.LENGTH_SHORT).show();
                             } else if (items[which].equals("Modify")) {
                                 //Todo: update
@@ -101,4 +115,7 @@ public class AccountAdapter extends RecyclerView.Adapter<AccountAdapter.MyViewHo
             });
         }
     }
+
+
+
 }
