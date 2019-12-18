@@ -12,11 +12,13 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.test_tab_layout1.ConnectToSQLServer;
 import com.example.test_tab_layout1.R;
 import com.example.test_tab_layout1.add_congtyActivity;
 import com.example.test_tab_layout1.modify_congtyActivity;
 import com.example.test_tab_layout1.update_baidangActivity;
 
+import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -80,6 +82,18 @@ public class CompanyAdapter extends RecyclerView.Adapter<CompanyAdapter.MyViewHo
                         public void onClick(DialogInterface dialog, int which) {
                             if (items[which].equals("Delete")) {
                                 //Todo: delete cong ty co macongty
+
+                                try {
+                                    Statement state = ConnectToSQLServer.getInstance().createStatement();
+                                    state.executeQuery("delete from Cong_ty where MaSoCty = '"  +
+                                            "ADD" + "'"
+                                    );
+                                }catch(Exception e){
+
+                                }
+                                companyInfoList.remove(getAdapterPosition());
+                                notifyDataSetChanged();
+
                                 Toast.makeText(txt_item_tencongty.getContext(), "Đã xóa", Toast.LENGTH_SHORT).show();
                             } else if (items[which].equals("Modify")) {
                                 //Todo: update

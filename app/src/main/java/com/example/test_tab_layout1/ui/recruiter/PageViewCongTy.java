@@ -74,6 +74,14 @@ public class PageViewCongTy extends Fragment {
 
         return root;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        companyInfoList.clear();
+        loaddata();
+    }
+
     private void loaddata(){
         try {
             Statement state = ConnectToSQLServer.getInstance().createStatement();
